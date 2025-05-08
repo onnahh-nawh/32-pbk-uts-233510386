@@ -18,6 +18,14 @@
       })
       const filterType = ref('all');
 
+      onMounted(() => {
+      const savedTasks = localStorage.getItem('tasks');
+      if (savedTasks) {
+        tasks.value = JSON.parse(savedTasks);
+      }
+    });
+
+
     </script>
   </div>
 </template>
