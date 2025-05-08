@@ -10,7 +10,12 @@
       const listTitle = ref('List Harian Gwh');
       const showAddForm = ref(false);
       const tasks = ref([]);
-      const newTask = ref({ ... });
+      const newTask = ref({
+        text: '',
+        description: '',
+        date: '',
+        completed: false
+      })
       const filterType = ref('all');
 
     </script>
