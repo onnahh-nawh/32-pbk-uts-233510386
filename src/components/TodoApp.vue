@@ -40,13 +40,22 @@
           saveTasks();
         }
       };
-      
+
       const toggleAddForm = () => {
         showAddForm.value = !showAddForm.value;
         if (!showAddForm.value) {
           newTask.value = { text: '', description: '', date: '', completed: false };
         }
       };
+
+      const toggleTaskStatus = (id) => {
+      const task = tasks.value.find(task => task.id === id);
+        if (task) {
+          task.completed = !task.completed;
+          saveTasks();
+        }
+      };
+
 
 
     });
