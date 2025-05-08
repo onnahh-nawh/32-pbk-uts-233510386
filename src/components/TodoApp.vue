@@ -4,6 +4,12 @@
       <h1>{{ listTitle }}</h1>
     </header>
 
+    <div class="card">
+      <button v-if="!showAddForm" @click="toggleAddForm" class="add-task-button">
+        <span class="plus-icon">+</span> Tambahkan Kegiatan Baru
+      </button>
+    </div>
+
     <script setup>
       import { ref, computed, onMounted } from 'vue';
 
