@@ -56,6 +56,14 @@
         }
       };
 
+      const filteredTasks = computed(() => {
+        if (filterType.value === 'active') {
+          return tasks.value.filter(task => !task.completed);
+        }
+        return tasks.value;
+      });
+
+
 
 
     });
