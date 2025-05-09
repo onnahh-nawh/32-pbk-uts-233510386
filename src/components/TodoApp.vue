@@ -14,10 +14,35 @@
           <h3>Tambah Kegiatan Baru</h3>
           <button @click="toggleAddForm" class="close-button">×</button>
         </div>
-        <input v-model="newTask.text" placeholder="Judul Kegiatan" />
-        <input v-model="newTask.description" placeholder="Deskripsi" />
-        <input type="date" v-model="newTask.date" />
-        <button @click="addTask">Simpan</button>
+
+        <div class="input-row">
+          <input v-model="newTask.text" type="text" placeholder="Masukkan kegiatan baru..." class="task-input" />
+        </div>
+
+        <div class="input-row">
+          <input v-model="newTask.description" type="text" placeholder="Deskripsi kegiatan (opsional)" class="task-input" />
+        </div>
+
+        <div class="input-row date-row">
+          <input v-model="newTask.date" type="date" class="date-input" />
+          <button @click="addTask" class="add-button">Tambah</button>
+        </div>
+      </div>
+
+      <div class="task-list">
+        <div
+          v-for="task in filteredTasks"
+          :key="task.id"
+          class="task-item"
+          :class="{ completed: task.completed }"
+        >
+          <div class="task-header">
+            <input type="checkbox" v-model="task.completed" @change="toggleTaskStatus(task.id)" />
+            <span class="task-text">{{ task.text }}</span>
+            <small v-if="task.date" class="task-date">{{ task.date }}</small>
+          </div>
+          <p v-if="task.description" class="task-description">{{ task.description }}</p>
+        </div>
       </div>
     </div>
   </div>
