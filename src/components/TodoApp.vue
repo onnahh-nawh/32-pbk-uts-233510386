@@ -54,6 +54,15 @@
           <button @click="deleteTask(task.id)" class="delete-button">Hapus</button>
         </li>
       </ul>
+
+      <div class="summary">
+        <p>Total: {{ tasks.length }} kegiatan | Selesai: {{ completedCount }} | Belum: {{ activeCount }}</p>
+      </div>
+
+    <footer>
+      <p>© 2025 UTS PBK Refiona Asri Rizky</p>
+    </footer>
+
     </div>
   </div>
 </template>
@@ -122,6 +131,14 @@ const filteredTasks = computed(() => {
 
 const filterMessage = computed(() => {
   return filterType.value === 'active' ? 'yang belum selesai' : '';
+});
+
+const completedCount = computed(() => {
+  return tasks.value.filter(task => task.completed).length;
+});
+
+const activeCount = computed(() => {
+  return tasks.value.filter(task => !task.completed).length;
 });
 
 const formatDate = (dateString) => {
