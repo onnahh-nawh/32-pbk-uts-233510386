@@ -275,3 +275,18 @@ header h1 {
   background-color: #c0392b;
 }
 
+.empty-list {
+  text-align: center;
+  padding: 2rem 0;
+  color: #777;
+  width: 100%;
+}
+
+.summary {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  width: 100%;
+}
+
