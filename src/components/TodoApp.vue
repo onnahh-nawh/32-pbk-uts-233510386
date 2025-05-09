@@ -122,6 +122,14 @@ const toggleTaskStatus = (id) => {
   }
 };
 
+const deleteTask = (id) => {
+  const index = tasks.value.findIndex(task => task.id === id);
+  if (index !== -1) {
+    tasks.value.splice(index, 1);
+    saveTasks();
+  }
+};
+
 const filteredTasks = computed(() => {
   if (filterType.value === 'active') {
     return tasks.value.filter(task => !task.completed);
