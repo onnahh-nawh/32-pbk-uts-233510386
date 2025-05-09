@@ -290,3 +290,11 @@ header h1 {
   width: 100%;
 }
 
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #888;
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
