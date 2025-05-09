@@ -109,4 +109,25 @@ const filteredTasks = computed(() => {
   }
   return tasks.value;
 });
+
+const formatDate = (dateString) => {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  return date.toLocaleDateString('id-ID', {
+    weekday: 'short',
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric'
+  });
+};
+
+const isOverdue = (task) => {
+  if (!task.date || task.completed) return false;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const taskDate = new Date(task.date);
+  taskDate.setHours(0, 0, 0, 0);
+  return taskDate < today;
+};
+
 </script>
