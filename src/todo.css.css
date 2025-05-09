@@ -65,3 +65,81 @@ header h1 {
   font-size: 18px;
   margin-right: 8px;
 } 
+
+.form-container {
+  margin-bottom: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-header h3 {
+  margin: 0;
+  color: #3498db;
+  font-size: 1.2rem;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #777;
+  cursor: pointer;
+}
+
+.input-row {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.date-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.task-input, .date-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.task-input:focus, .date-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.date-input {
+  flex: 1;
+}
+
+.add-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  min-width: 100px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.add-button:hover {
+  background-color: #2980b9;
+}
+
