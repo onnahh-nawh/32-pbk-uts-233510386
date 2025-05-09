@@ -194,3 +194,63 @@ header h1 {
   to { opacity: 1; transform: translateY(0); }
 }
 
+.task-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+}
+
+.task-checkbox {
+  min-width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.task-details {
+  flex: 1;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.task-text {
+  font-size: 16px;
+  font-weight: 500;
+  transition: text-decoration 0.3s, color 0.3s;
+}
+
+.task-date {
+  font-size: 12px;
+  color: #666;
+  background-color: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.task-date.overdue {
+  background-color: #ffebee;
+  color: #e74c3c;
+}
+
+.task-description {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
+}
+
+.task-text.completed, .task-description.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
