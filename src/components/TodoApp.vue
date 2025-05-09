@@ -29,6 +29,16 @@
         </div>
       </div>
 
+      <div class="filter-container">
+        <button @click="filterType = 'all'" :class="{ active: filterType === 'all' }" class="filter-button">Semua</button>
+        <button @click="filterType = 'active'" :class="{ active: filterType === 'active' }" class="filter-button">Belum Selesai</button>
+      </div>
+
+      <div v-if="filteredTasks.length === 0" class="empty-list">
+        <p>Belum ada kegiatan {{ filterMessage }}</p>
+      </div>
+
+
       <ul class="task-list">
         <li v-for="task in filteredTasks" :key="task.id" class="task-item">
           <div class="task-content">
@@ -108,6 +118,10 @@ const filteredTasks = computed(() => {
     return tasks.value.filter(task => !task.completed);
   }
   return tasks.value;
+});
+
+const filterMessage = computed(() => {
+  return filterType.value === 'active' ? 'yang belum selesai' : '';
 });
 
 const formatDate = (dateString) => {
