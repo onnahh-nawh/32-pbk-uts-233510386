@@ -29,21 +29,21 @@
         </div>
       </div>
 
-      <div class="task-list">
-        <div
-          v-for="task in filteredTasks"
-          :key="task.id"
-          class="task-item"
-          :class="{ completed: task.completed }"
-        >
-          <div class="task-header">
-            <input type="checkbox" v-model="task.completed" @change="toggleTaskStatus(task.id)" />
-            <span class="task-text">{{ task.text }}</span>
-            <small v-if="task.date" class="task-date">{{ task.date }}</small>
+      <ul class="task-list">
+        <li v-for="task in filteredTasks" :key="task.id" class="task-item">
+          <div class="task-content">
+            <input type="checkbox" :checked="task.completed" @change="toggleTaskStatus(task.id)" class="task-checkbox" />
+            <div class="task-details">
+              <div class="task-header">
+                <span :class="{ 'completed': task.completed }" class="task-text">{{ task.text }}</span>
+                <span v-if="task.date" class="task-date" :class="{ 'overdue': isOverdue(task) }">{{ formatDate(task.date) }}</span>
+              </div>
+              <p v-if="task.description" class="task-description" :class="{ 'completed': task.completed }">{{ task.description }}</p>
+            </div>
           </div>
-          <p v-if="task.description" class="task-description">{{ task.description }}</p>
-        </div>
-      </div>
+          <button @click="deleteTask(task.id)" class="delete-button">Hapus</button>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
