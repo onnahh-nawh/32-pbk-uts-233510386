@@ -298,3 +298,51 @@ footer {
   padding-bottom: 20px;
 }
 
+@media (max-width: 600px) {
+  .card {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .form-container {
+    padding: 1rem;
+  }
+
+  .task-item {
+    padding: 12px;
+  }
+
+  .task-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-date {
+    margin-top: 4px;
+  }
+
+  .delete-button {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .filter-container {
+    gap: 5px;
+  }
+
+  .filter-button {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .task-content {
+    flex-direction: column;
+  }
+
+  .task-checkbox {
+    margin-bottom: 8px;
+  }
+}
